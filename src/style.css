@@ -29,6 +29,15 @@ body {
   display: grid;
   place-items: center;
 }
+@media (max-width:720px) {
+  
+  body{
+    padding-top: 200px;
+    margin: auto;
+    zoom:55%;
+    font-size: 50px;
+  }
+}
 
 .widget {
   display: flex;
