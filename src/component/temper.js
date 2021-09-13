@@ -17,7 +17,8 @@ const Temper = () => {
             const {main: weatherMood} = data.weather[0];
             const {name} = data;
             const{speed} = data.wind;
-            const { country, sunset} = data.sys;
+            const { country, sunset, sunrise} = data.sys;
+            // console.log(sunrise)
 
             const myNewWatherInfo = {
                 temp,
@@ -27,6 +28,7 @@ const Temper = () => {
                 name,
                 speed,
                 country,
+                sunrise,
                 sunset,
             };
             setTempInfo(myNewWatherInfo);
@@ -43,7 +45,7 @@ const Temper = () => {
     useEffect (
         () =>{
             getWeatherInfo();
-        }, []
+        },[]
     );
 
     return (

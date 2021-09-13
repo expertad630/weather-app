@@ -12,6 +12,7 @@ const WeatherCard = ({tempInfo}) => {
         name,
         speed,
         country,
+        sunrise,
         sunset,
     } = tempInfo;
 
@@ -24,19 +25,19 @@ const WeatherCard = ({tempInfo}) => {
             switch (weatherMood) {
                     
                 case "Clouds": 
-                    (curTime > date.getHours() && curTime.getMinutes() > date.getMinutes()) ? setWeatherState("wi-night-cloudy") : setWeatherState("wi-day-cloudy");
+                    (curTime.getHours() > date.getHours() && curTime.getHours() < sunrDate.getHours()) ? setWeatherState("wi-night-cloudy") : setWeatherState("wi-day-cloudy");
                     break;
                 case "Haze": 
-                    (curTime > date.getHours() && curTime.getMinutes() > date.getMinutes()) ? setWeatherState("wi-night-fog") : setWeatherState("wi-day-cloudy");            
+                    (curTime.getHours() > date.getHours() && curTime.getHours() < sunrDate.getHours()) ? setWeatherState("wi-night-fog") : setWeatherState("wi-day-cloudy");            
                     break;
                 case "Clear": 
-                    (curTime > date.getHours() && curTime.getMinutes() > date.getMinutes()) ? setWeatherState("wi-night-clear") : setWeatherState("wi-day-cloudy");                        
+                    (curTime.getHours() > date.getHours() && curTime.getHours() < sunrDate.getHours()) ? setWeatherState("wi-night-clear") : setWeatherState("wi-day-cloudy");                        
                     break;
                 case "Mist": 
-                    (curTime > date.getHours() && curTime.getMinutes() > date.getMinutes()) ? setWeatherState(setWeatherState("wi-night-cloudy-windy")) : setWeatherState("wi-day-cloudy");                
+                    (curTime.getHours() > date.getHours() && curTime.getHours() < sunrDate.getHours()) ? setWeatherState(setWeatherState("wi-night-cloudy-windy")) : setWeatherState("wi-day-cloudy");                
                     break;
                 case "Rain": 
-                    (curTime > date.getHours() && curTime.getMinutes() > date.getMinutes()) ? setWeatherState(setWeatherState("wi-night-rain")) : setWeatherState("wi-day-rain");  
+                    (curTime.getHours() > date.getHours() && curTime.getHours() < sunrDate.getHours()) ? setWeatherState(setWeatherState("wi-night-rain")) : setWeatherState("wi-day-rain");  
                     break;
                 default:
                     setWeatherState("wi-stars");
@@ -44,11 +45,16 @@ const WeatherCard = ({tempInfo}) => {
             }
         }
             
-    }, [weatherMood])
+    }, [weatherMood]);
 
     let sec= sunset;
     let date = new Date(sec * 1000);
     let timeStr = `${date.getHours()}:${date.getMinutes()}`;
+
+    let sunr = sunrise;
+    
+    let sunrDate= new Date(sunr * 1000);
+    // console.log(sunrDate)
 
     return (
         <>

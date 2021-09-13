@@ -43,7 +43,7 @@ body {
   body{
     padding-top: 200px;
     margin: auto;
-    zoom:40%;
+    zoom:50%;
     font-size: 50px;
   }
 }
@@ -201,20 +201,5 @@ body {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  margin-top: -150px;
   margin-bottom: 50px;
 } 
-
-
-/* Resize the wrap to see the search bar change!  */
-/* .wrap {
-  display: flex;
-  width: 80%;
-  margin: auto;
-  position: absolute;
-  align-items: center;
-  justify-content: space-between;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}  */
