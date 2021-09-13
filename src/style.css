@@ -34,7 +34,7 @@ body {
   body{
     padding-top: 200px;
     margin: auto;
-    zoom:55%;
+    zoom:50%;
     font-size: 50px;
   }
 }
@@ -55,8 +55,7 @@ body {
   flex-wrap: wrap;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),
-    0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
 }
 .widget .weatherIcon {
   flex: 1 100%;
